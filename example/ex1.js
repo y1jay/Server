@@ -27,11 +27,30 @@ connection.query('select article,color from shirts limit 20' ,
 //     }
 //     )
 //3.문제
-connection.query('select * from shirts where shirt_size = "M" ' ,
 
-(error, res , field)=>{
-    console.log(res)
+// query = 'select * from shirts where shirt_size = "M";'
+
+// connection.query(query , function(error , results , fields){
+                  
+    
+//     //console.log(results) 
+//       for(let i  = 0 ; i < results.length; i++){
+//           console.log(results[i].shirt_id)
+//       }
+//         })
+ query = 'select * from shirts where shirt_size = "M"'
+
+connection.query(query,(error, res, field)=>{
+    for(let i =0; i<res.length; i++){
+        console.log(res[i].shirt_id)
+    }
 })
+
+// connection.query('select * from shirts where shirt_size = "M" ' ,
+
+// (error, res , field)=>{
+//     console.log(res)
+// })
 
 //4.문제
 
