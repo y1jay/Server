@@ -12,9 +12,34 @@ let connection = mysql.createConnection(
 } 
 )
 
-connection.query('select count(*) from memo' , 
-function(error, res , field){
+// insert 문
+// '',""를 잘 나눠 써야 한다
+// let insert_query = 'insert into memo(title,coment) \
+// values ("hello","nice")'
+
+// let insert_query = 'insert into memo(title,coment) \
+//  values ("hey","hi")'
+
+// connection.query(insert_query,(error,result)=>{
+//     console.log(result)
+// }
+// )
+
+
+
+// connection.query('select * from memo where title like "%h"' , 
+// (error, res , field)=>{
+//     console.log(res)
+//     console.log(res)
+// })
+// 중요!! 안넣어주면 빠져나오질 못 함
+// connection.end()
+
+
+let q_like = "%he%"
+connection.query('select title from memo where title like ? and id =?' ,
+[q_like,1] , 
+(error, res , field)=>{
     console.log(res)
 })
-// 중요!! 안넣어주면 빠져나오질 못 함
 connection.end()

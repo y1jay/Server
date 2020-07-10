@@ -218,10 +218,186 @@ console.log(cook.name + " " + cook.age+" "+cook.make())
 // JSON : Javascript object notation
 let cook2 = {name : '김나나',
   age : 298,
-  make : ()=>{ return'백수새끼'
+  make : ()=>{ return'백수'
   }
 }
 
 console.log(cook2.name + " " + cook2.age+' '+cook2.make())
 
 //npm install mysql sql 다운로드 코드
+
+
+
+
+// key : value
+let football = {
+    color : 'Blue',
+    size : 36,
+    isActive : true,
+    add : (x,y)=>{
+        let ret = x+y
+        return ret 
+    }
+}
+
+ result = football.add(3,4)
+
+console.log(result)
+
+let color = football.color
+console.log(color)
+
+
+
+// class Football {  안드로이드에선 이렇게 했다 
+//   String color = "Blue";
+//   public Football(){
+    // color = "Blue"
+// }            
+//}
+//단일데이터
+let name = 'James'
+
+// Array (배열) : 데이터를 여러개!!!!! 를 저장하기 위해서 사용.
+let names = ['James','John','Michael']
+
+//Array에 저장되어 있는 값을 가져오는 코드
+names[0]            //index 인덱스    : 0부터시작
+names[1]
+names[2]
+
+
+console.log(names[0])
+console.log(names[1])
+console.log(names[2])
+
+
+
+
+
+
+let employee = [ 
+    {name : 'James', age : 24},
+    {name : 'Jonson' , age : 25},
+    {name : 'Michael',age : 30} 
+]
+
+employee[0]
+employee[1]
+employee[2]
+
+console.log(employee[1])
+
+// 문법 규칙 패턴
+employee[0].name
+employee[0].age
+employee[1].name
+employee[1].age
+employee[2].name
+employee[2].age
+
+
+console.log(employee[0].name)
+
+
+let people = [
+    {name : '마이크', age : 24, 
+    pet : [{name : 'A', type : "cat"},{name : 'B', type : 'dog'}]},
+    {name : '존', age : 30, 
+    pet : [{name : 'C', type : "똥"},{name : 'D', type : '똥개'}  ]},
+    {name : '똥구뇽', age : 93, pet : []}
+]
+
+// 1. 첫번째 사람의 두번째 pet 이름을 출력
+console.log(people[0].pet[0].name)
+// 2. 두번째 사람의 첫번째 pet은 어떤 동물인가?
+console.log(people[1].pet[0].type)
+
+names = ['똥','똥개','에베벱베베']
+
+
+// 두번쨰 이름을 장애인으로 변경.
+names[1] = '똥구뇽'
+console.log(names[1])
+
+// 똥구멍을 names에 추가 
+names.push('똥구멍')
+
+console.log(names)
+
+//pop은 맨 뒤의 원소 삭제
+// names.pop()
+
+// console.log(names)
+
+// 특정 위치의 원소 삭제
+// names.splice(1,1)
+// console.log(names)
+
+//splice 함수 : 파라미터 기본 2개
+// splice(start, count)
+
+// names.pop()
+
+// console.log(names)
+
+//array의 모든 원소를 하나로 합친다.
+
+let ret_name = names.join('-')
+
+console.log(ret_name)
+
+//filter name 의 길이가 4개 이상인걸 가져와라
+
+let ret_filter = names.filter(name => name.length >4)
+console.log(ret_filter)
+
+// unshift() 어레이리스트 안에 
+// 맨 앞에 추가하는 함수
+
+let arr1 = [1,2,3]
+
+arr1.unshift(0)
+
+console.log(arr1)
+
+
+// splice : 내가 원하는 위치에서부터 데이터를 추출
+let arr2 = ['one','two', 'three','four']
+//두번째 데이터부터 데이터를 끝까지 가져온다.
+let ret_arr2 = arr2.splice(1,3)
+console.log(arr2) 
+console.log(ret_arr2)
+
+//반복문
+
+names = ['똥','똥개','에베벱베베']
+
+
+
+// Array에 저장된 모든 원소 출력
+for(let i=0; i<names.length; i++){
+    console.log(names[i])
+}
+// for(let i=0; i<num_arr.length; i++){
+//     console.log(num_arr[i])
+// }
+
+//Array에 내장된 반복(loop) 메소드.
+names.forEach(function(name){
+    console.log(name)
+})
+
+num_arr = [2,5,8,10]
+
+// 각 원소를 제곱해서 화면에 출력
+for(let i=0; i<num_arr.length; i++){
+    console.log(num_arr[i]**2)
+}
+for(let i=0; i<num_arr.length; i++){
+    let data = num_arr[i]**2
+    console.log(data)
+}
+num_arr.forEach(function(nums){
+    console.log(nums**2)
+})
